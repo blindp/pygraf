@@ -3,7 +3,7 @@
 Modul pro kreslení realtime grafů, analogových i digitálních.
 Používá tkinter modul.
 
-* self test: python3 -m pygraf
+* self test:$ python3 -m pygraf
 
 ![Alt tag](./pygraf_test.png?raw=true "pygraf.py")
 

@@ -42,6 +42,16 @@ class Cons:
     COLOR_TEXT = "white"
     COLOR_BACK = "black"
     
+    ANSI_COLOR = {
+                    'red':'\033[91m',
+                    'green':'\033[92m',
+                    'yellow':'\033[93m',
+                    'blue':'\033[94m',
+                    'magenta':'\033[95m',
+                    'cyan':'\033[96m',
+                    'white':'\033[97m',
+                    'end':'\033[0m'}
+    
 class Utils:
     """Pomocne funkce"""
         
@@ -270,7 +280,10 @@ class DigitalGraf(Graf):
         if(self.data[-2] and not self.data[-1]):
             #konec mereni
             if(self.ms > Cons.MIN_TIME_PRN):
-                print("{0} - {1}ms".format(self.title, self.ms))
+                try:
+                    print(Cons.ANSI_COLOR[self.color]+"{0} - {1}ms".format(self.title, self.ms)+Cons.ANSI_COLOR['end'])
+                except KeyError:
+                    print("{0} - {1}ms".format(self.title, self.ms))
 
 def main():
     
